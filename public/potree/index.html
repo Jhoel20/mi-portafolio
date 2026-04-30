@@ -29,7 +29,7 @@
         viewer.setFOV(75);
         viewer.setPointBudget(1000000);
 
-        Potree.loadPointCloud("../nube3d/metadata.json", "nube", function (e) {
+        Potree.loadPointCloud("https://pub-684775b68cbc4b3a87ad8d08527ab5f1.r2.dev/metadata.json", "nube", function (e) {
           viewer.scene.addPointCloud(e.pointcloud);
           viewer.fitToScreen();
           viewer.setClipTask(Potree.ClipTask.NONE);
