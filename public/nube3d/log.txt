@@ -1,0 +1,331 @@
+INFO(chunker_countsort_laszip.cpp:176): counting NP_TULUMAYO FOCALIZADO-002.las, first point: 0, num points: 1'000'000
+INFO(chunker_countsort_laszip.cpp:176): counting NP_TULUMAYO FOCALIZADO-002.las, first point: 1'000'000, num points: 1'000'000
+INFO(chunker_countsort_laszip.cpp:176): counting NP_TULUMAYO FOCALIZADO-002.las, first point: 2'000'000, num points: 1'000'000
+INFO(chunker_countsort_laszip.cpp:176): counting NP_TULUMAYO FOCALIZADO-002.las, first point: 3'000'000, num points: 1'000'000
+INFO(chunker_countsort_laszip.cpp:176): counting NP_TULUMAYO FOCALIZADO-002.las, first point: 4'000'000, num points: 1'000'000
+INFO(chunker_countsort_laszip.cpp:176): counting NP_TULUMAYO FOCALIZADO-002.las, first point: 5'000'000, num points: 1'000'000
+INFO(chunker_countsort_laszip.cpp:176): counting NP_TULUMAYO FOCALIZADO-002.las, first point: 6'000'000, num points: 1'000'000
+INFO(chunker_countsort_laszip.cpp:176): counting NP_TULUMAYO FOCALIZADO-002.las, first point: 7'000'000, num points: 1'000'000
+INFO(chunker_countsort_laszip.cpp:176): counting NP_TULUMAYO FOCALIZADO-002.las, first point: 8'000'000, num points: 1'000'000
+INFO(chunker_countsort_laszip.cpp:176): counting NP_TULUMAYO FOCALIZADO-002.las, first point: 10'000'000, num points: 1'000'000
+INFO(chunker_countsort_laszip.cpp:176): counting NP_TULUMAYO FOCALIZADO-002.las, first point: 9'000'000, num points: 1'000'000
+INFO(chunker_countsort_laszip.cpp:176): counting NP_TULUMAYO FOCALIZADO-002.las, first point: 11'000'000, num points: 1'000'000
+INFO(chunker_countsort_laszip.cpp:176): counting NP_TULUMAYO FOCALIZADO-002.las, first point: 12'000'000, num points: 1'000'000
+INFO(chunker_countsort_laszip.cpp:176): counting NP_TULUMAYO FOCALIZADO-002.las, first point: 13'000'000, num points: 1'000'000
+INFO(chunker_countsort_laszip.cpp:176): counting NP_TULUMAYO FOCALIZADO-002.las, first point: 14'000'000, num points: 1'000'000
+INFO(chunker_countsort_laszip.cpp:176): counting NP_TULUMAYO FOCALIZADO-002.las, first point: 17'000'000, num points: 1'000'000
+INFO(chunker_countsort_laszip.cpp:176): counting NP_TULUMAYO FOCALIZADO-002.las, first point: 16'000'000, num points: 1'000'000
+INFO(chunker_countsort_laszip.cpp:176): counting NP_TULUMAYO FOCALIZADO-002.las, first point: 18'000'000, num points: 1'000'000
+INFO(chunker_countsort_laszip.cpp:176): counting NP_TULUMAYO FOCALIZADO-002.las, first point: 15'000'000, num points: 1'000'000
+INFO(chunker_countsort_laszip.cpp:176): counting NP_TULUMAYO FOCALIZADO-002.las, first point: 19'000'000, num points: 1'000'000
+INFO(chunker_countsort_laszip.cpp:176): counting NP_TULUMAYO FOCALIZADO-002.las, first point: 21'000'000, num points: 1'000'000
+INFO(chunker_countsort_laszip.cpp:176): counting NP_TULUMAYO FOCALIZADO-002.las, first point: 20'000'000, num points: 1'000'000
+INFO(chunker_countsort_laszip.cpp:176): counting NP_TULUMAYO FOCALIZADO-002.las, first point: 26'000'000, num points: 1'000'000
+INFO(chunker_countsort_laszip.cpp:176): counting NP_TULUMAYO FOCALIZADO-002.las, first point: 23'000'000, num points: 1'000'000
+INFO(chunker_countsort_laszip.cpp:176): counting NP_TULUMAYO FOCALIZADO-002.las, first point: 25'000'000, num points: 1'000'000
+INFO(chunker_countsort_laszip.cpp:176): counting NP_TULUMAYO FOCALIZADO-002.las, first point: 24'000'000, num points: 1'000'000
+INFO(chunker_countsort_laszip.cpp:176): counting NP_TULUMAYO FOCALIZADO-002.las, first point: 22'000'000, num points: 1'000'000
+INFO(chunker_countsort_laszip.cpp:176): counting NP_TULUMAYO FOCALIZADO-002.las, first point: 28'000'000, num points: 1'000'000
+INFO(chunker_countsort_laszip.cpp:176): counting NP_TULUMAYO FOCALIZADO-002.las, first point: 27'000'000, num points: 1'000'000
+INFO(chunker_countsort_laszip.cpp:176): counting NP_TULUMAYO FOCALIZADO-002.las, first point: 31'000'000, num points: 1'000'000
+INFO(chunker_countsort_laszip.cpp:176): counting NP_TULUMAYO FOCALIZADO-002.las, first point: 32'000'000, num points: 1'000'000
+INFO(chunker_countsort_laszip.cpp:176): counting NP_TULUMAYO FOCALIZADO-002.las, first point: 30'000'000, num points: 1'000'000
+INFO(chunker_countsort_laszip.cpp:176): counting NP_TULUMAYO FOCALIZADO-002.las, first point: 29'000'000, num points: 1'000'000
+INFO(chunker_countsort_laszip.cpp:176): counting NP_TULUMAYO FOCALIZADO-002.las, first point: 33'000'000, num points: 1'000'000
+INFO(chunker_countsort_laszip.cpp:176): counting NP_TULUMAYO FOCALIZADO-002.las, first point: 34'000'000, num points: 1'000'000
+INFO(chunker_countsort_laszip.cpp:176): counting NP_TULUMAYO FOCALIZADO-002.las, first point: 35'000'000, num points: 1'000'000
+INFO(chunker_countsort_laszip.cpp:176): counting NP_TULUMAYO FOCALIZADO-002.las, first point: 36'000'000, num points: 1'000'000
+INFO(chunker_countsort_laszip.cpp:176): counting NP_TULUMAYO FOCALIZADO-002.las, first point: 37'000'000, num points: 1'000'000
+INFO(chunker_countsort_laszip.cpp:176): counting NP_TULUMAYO FOCALIZADO-002.las, first point: 41'000'000, num points: 1'000'000
+INFO(chunker_countsort_laszip.cpp:176): counting NP_TULUMAYO FOCALIZADO-002.las, first point: 38'000'000, num points: 1'000'000
+INFO(chunker_countsort_laszip.cpp:176): counting NP_TULUMAYO FOCALIZADO-002.las, first point: 40'000'000, num points: 1'000'000
+INFO(chunker_countsort_laszip.cpp:176): counting NP_TULUMAYO FOCALIZADO-002.las, first point: 39'000'000, num points: 1'000'000
+INFO(chunker_countsort_laszip.cpp:176): counting NP_TULUMAYO FOCALIZADO-002.las, first point: 42'000'000, num points: 1'000'000
+INFO(chunker_countsort_laszip.cpp:176): counting NP_TULUMAYO FOCALIZADO-002.las, first point: 43'000'000, num points: 1'000'000
+INFO(chunker_countsort_laszip.cpp:176): counting NP_TULUMAYO FOCALIZADO-002.las, first point: 44'000'000, num points: 1'000'000
+INFO(chunker_countsort_laszip.cpp:176): counting NP_TULUMAYO FOCALIZADO-002.las, first point: 46'000'000, num points: 1'000'000
+INFO(chunker_countsort_laszip.cpp:176): counting NP_TULUMAYO FOCALIZADO-002.las, first point: 49'000'000, num points: 1'000'000
+INFO(chunker_countsort_laszip.cpp:176): counting NP_TULUMAYO FOCALIZADO-002.las, first point: 48'000'000, num points: 1'000'000
+INFO(chunker_countsort_laszip.cpp:176): counting NP_TULUMAYO FOCALIZADO-002.las, first point: 47'000'000, num points: 1'000'000
+INFO(chunker_countsort_laszip.cpp:176): counting NP_TULUMAYO FOCALIZADO-002.las, first point: 45'000'000, num points: 1'000'000
+INFO(chunker_countsort_laszip.cpp:176): counting NP_TULUMAYO FOCALIZADO-002.las, first point: 54'000'000, num points: 1'000'000
+INFO(chunker_countsort_laszip.cpp:176): counting NP_TULUMAYO FOCALIZADO-002.las, first point: 53'000'000, num points: 1'000'000
+INFO(chunker_countsort_laszip.cpp:176): counting NP_TULUMAYO FOCALIZADO-002.las, first point: 50'000'000, num points: 1'000'000
+INFO(chunker_countsort_laszip.cpp:176): counting NP_TULUMAYO FOCALIZADO-002.las, first point: 51'000'000, num points: 1'000'000
+INFO(chunker_countsort_laszip.cpp:176): counting NP_TULUMAYO FOCALIZADO-002.las, first point: 52'000'000, num points: 1'000'000
+INFO(chunker_countsort_laszip.cpp:176): counting NP_TULUMAYO FOCALIZADO-002.las, first point: 55'000'000, num points: 1'000'000
+INFO(chunker_countsort_laszip.cpp:176): counting NP_TULUMAYO FOCALIZADO-002.las, first point: 56'000'000, num points: 1'000'000
+INFO(chunker_countsort_laszip.cpp:176): counting NP_TULUMAYO FOCALIZADO-002.las, first point: 58'000'000, num points: 1'000'000
+INFO(chunker_countsort_laszip.cpp:176): counting NP_TULUMAYO FOCALIZADO-002.las, first point: 57'000'000, num points: 1'000'000
+INFO(chunker_countsort_laszip.cpp:176): counting NP_TULUMAYO FOCALIZADO-002.las, first point: 59'000'000, num points: 1'000'000
+INFO(chunker_countsort_laszip.cpp:176): counting NP_TULUMAYO FOCALIZADO-002.las, first point: 60'000'000, num points: 1'000'000
+INFO(chunker_countsort_laszip.cpp:176): counting NP_TULUMAYO FOCALIZADO-002.las, first point: 61'000'000, num points: 1'000'000
+INFO(chunker_countsort_laszip.cpp:176): counting NP_TULUMAYO FOCALIZADO-002.las, first point: 62'000'000, num points: 1'000'000
+INFO(chunker_countsort_laszip.cpp:176): counting NP_TULUMAYO FOCALIZADO-002.las, first point: 63'000'000, num points: 1'000'000
+INFO(chunker_countsort_laszip.cpp:176): counting NP_TULUMAYO FOCALIZADO-002.las, first point: 66'000'000, num points: 1'000'000
+INFO(chunker_countsort_laszip.cpp:176): counting NP_TULUMAYO FOCALIZADO-002.las, first point: 65'000'000, num points: 1'000'000
+INFO(chunker_countsort_laszip.cpp:176): counting NP_TULUMAYO FOCALIZADO-002.las, first point: 67'000'000, num points: 1'000'000
+INFO(chunker_countsort_laszip.cpp:176): counting NP_TULUMAYO FOCALIZADO-002.las, first point: 64'000'000, num points: 1'000'000
+INFO(chunker_countsort_laszip.cpp:176): counting NP_TULUMAYO FOCALIZADO-002.las, first point: 68'000'000, num points: 1'000'000
+INFO(chunker_countsort_laszip.cpp:176): counting NP_TULUMAYO FOCALIZADO-002.las, first point: 69'000'000, num points: 1'000'000
+INFO(chunker_countsort_laszip.cpp:176): counting NP_TULUMAYO FOCALIZADO-002.las, first point: 70'000'000, num points: 1'000'000
+INFO(chunker_countsort_laszip.cpp:176): counting NP_TULUMAYO FOCALIZADO-002.las, first point: 71'000'000, num points: 1'000'000
+INFO(chunker_countsort_laszip.cpp:176): counting NP_TULUMAYO FOCALIZADO-002.las, first point: 72'000'000, num points: 1'000'000
+INFO(chunker_countsort_laszip.cpp:176): counting NP_TULUMAYO FOCALIZADO-002.las, first point: 73'000'000, num points: 1'000'000
+INFO(chunker_countsort_laszip.cpp:176): counting NP_TULUMAYO FOCALIZADO-002.las, first point: 74'000'000, num points: 1'000'000
+INFO(chunker_countsort_laszip.cpp:176): counting NP_TULUMAYO FOCALIZADO-002.las, first point: 75'000'000, num points: 1'000'000
+INFO(chunker_countsort_laszip.cpp:176): counting NP_TULUMAYO FOCALIZADO-002.las, first point: 76'000'000, num points: 1'000'000
+INFO(chunker_countsort_laszip.cpp:176): counting NP_TULUMAYO FOCALIZADO-002.las, first point: 77'000'000, num points: 1'000'000
+INFO(chunker_countsort_laszip.cpp:176): counting NP_TULUMAYO FOCALIZADO-002.las, first point: 79'000'000, num points: 1'000'000
+INFO(chunker_countsort_laszip.cpp:176): counting NP_TULUMAYO FOCALIZADO-002.las, first point: 78'000'000, num points: 1'000'000
+INFO(chunker_countsort_laszip.cpp:176): counting NP_TULUMAYO FOCALIZADO-002.las, first point: 80'000'000, num points: 626'330
+INFO(indexer.cpp:1656): start indexing chunk r020
+filesize: 22'040'349
+min: 512017.10999999999, 9053747.8975000009, 231.15000000000001
+max: 512089.96375, 9053820.7512500007, 304.00375000000929
+INFO(indexer.cpp:1656): start indexing chunk r00
+filesize: 27'821'849
+min: 512017.10999999999, 9053602.1899999995, 231.15000000000001
+max: 512162.8175, 9053747.8975000009, 376.8575000000186
+INFO(indexer.cpp:1656): start indexing chunk r022
+filesize: 13'615'014
+min: 512017.10999999999, 9053820.7512500007, 231.15000000000001
+max: 512089.96375, 9053893.6050000004, 304.00375000000929
+INFO(indexer.cpp:1656): start indexing chunk r024
+filesize: 87'260'691
+min: 512089.96375, 9053747.8975000009, 231.15000000000001
+max: 512162.8175, 9053820.7512500007, 304.00375000000929
+INFO(indexer.cpp:1656): start indexing chunk r026
+filesize: 111'881'325
+min: 512089.96375, 9053820.7512500007, 231.15000000000001
+max: 512162.8175, 9053893.6050000004, 304.00375000000929
+INFO(indexer.cpp:1656): start indexing chunk r040
+filesize: 1'612'899
+min: 512162.8175, 9053602.1899999995, 231.15000000000001
+max: 512235.67125000001, 9053675.0437499993, 304.00375000000929
+INFO(indexer.cpp:1656): start indexing chunk r046
+filesize: 78'395'590
+min: 512235.67125000001, 9053675.0437499993, 231.15000000000001
+max: 512308.52500000002, 9053747.8975000009, 304.00375000000929
+INFO(indexer.cpp:1656): start indexing chunk r042
+filesize: 72'949'944
+min: 512162.8175, 9053675.0437499993, 231.15000000000001
+max: 512235.67125000001, 9053747.8975000009, 304.00375000000929
+INFO(indexer.cpp:1656): start indexing chunk r044
+filesize: 9'664'591
+min: 512235.67125000001, 9053602.1899999995, 231.15000000000001
+max: 512308.52500000002, 9053675.0437499993, 304.00375000000929
+INFO(indexer.cpp:1656): start indexing chunk r060
+filesize: 117'855'986
+min: 512162.8175, 9053747.8975000009, 231.15000000000001
+max: 512235.67125000001, 9053820.7512500007, 304.00375000000929
+INFO(indexer.cpp:1656): start indexing chunk r0622
+filesize: 60'797'572
+min: 512162.8175, 9053857.1781250015, 231.15000000000001
+max: 512199.24437500001, 9053893.6050000004, 267.57687500000463
+INFO(indexer.cpp:1656): start indexing chunk r0624
+filesize: 38'495'180
+min: 512199.24437500001, 9053820.7512500007, 231.15000000000001
+max: 512235.67125000001, 9053857.1781250015, 267.57687500000463
+INFO(indexer.cpp:1656): start indexing chunk r0620
+filesize: 52'762'930
+min: 512162.8175, 9053820.7512500007, 231.15000000000001
+max: 512199.24437500001, 9053857.1781250015, 267.57687500000463
+INFO(indexer.cpp:1656): start indexing chunk r064
+filesize: 118'043'412
+min: 512235.67125000001, 9053747.8975000009, 231.15000000000001
+max: 512308.52500000002, 9053820.7512500007, 304.00375000000929
+INFO(indexer.cpp:1656): start indexing chunk r0626
+filesize: 37'328'340
+min: 512199.24437500001, 9053857.1781250015, 231.15000000000001
+max: 512235.67125000001, 9053893.6050000004, 267.57687500000463
+INFO(indexer.cpp:1656): start indexing chunk r0660
+filesize: 52'504'359
+min: 512235.67125000001, 9053820.7512500007, 231.15000000000001
+max: 512272.09812500002, 9053857.1781250015, 267.57687500000463
+INFO(indexer.cpp:1656): start indexing chunk r0664
+filesize: 53'683'661
+min: 512272.09812500002, 9053820.7512500007, 231.15000000000001
+max: 512308.52500000002, 9053857.1781250015, 267.57687500000463
+INFO(indexer.cpp:1656): start indexing chunk r0662
+filesize: 75'825'628
+min: 512235.67125000001, 9053857.1781250015, 231.15000000000001
+max: 512272.09812500002, 9053893.6050000004, 267.57687500000463
+INFO(indexer.cpp:1656): start indexing chunk r0666
+filesize: 56'716'794
+min: 512272.09812500002, 9053857.1781250015, 231.15000000000001
+max: 512308.52500000002, 9053893.6050000004, 267.57687500000463
+INFO(indexer.cpp:1656): start indexing chunk r20
+filesize: 116'238'034
+min: 512017.10999999999, 9053893.6050000004, 231.15000000000001
+max: 512162.8175, 9054039.3125, 376.8575000000186
+INFO(indexer.cpp:1656): start indexing chunk r22
+filesize: 7'646'057
+min: 512017.10999999999, 9054039.3125, 231.15000000000001
+max: 512162.8175, 9054185.0199999996, 376.8575000000186
+INFO(indexer.cpp:1656): start indexing chunk r2400
+filesize: 37'772'973
+min: 512162.8175, 9053893.6050000004, 231.15000000000001
+max: 512199.24437500001, 9053930.0318749994, 267.57687500000463
+INFO(indexer.cpp:1656): start indexing chunk r2402
+filesize: 23'763'019
+min: 512162.8175, 9053930.0318749994, 231.15000000000001
+max: 512199.24437500001, 9053966.4587500002, 267.57687500000463
+INFO(indexer.cpp:1656): start indexing chunk r2404
+filesize: 48'851'071
+min: 512199.24437500001, 9053893.6050000004, 231.15000000000001
+max: 512235.67125000001, 9053930.0318749994, 267.57687500000463
+INFO(indexer.cpp:1699): finished indexing chunk r040
+INFO(indexer.cpp:1656): start indexing chunk r2406
+filesize: 29'204'139
+min: 512199.24437500001, 9053930.0318749994, 231.15000000000001
+max: 512235.67125000001, 9053966.4587500002, 267.57687500000463
+INFO(indexer.cpp:1699): finished indexing chunk r044
+INFO(indexer.cpp:1699): finished indexing chunk r22
+INFO(indexer.cpp:1656): start indexing chunk r244
+filesize: 123'393'113
+min: 512235.67125000001, 9053893.6050000004, 231.15000000000001
+max: 512308.52500000002, 9053966.4587500002, 304.00375000000929
+INFO(indexer.cpp:1656): start indexing chunk r242
+filesize: 65'971'348
+min: 512162.8175, 9053966.4587500002, 231.15000000000001
+max: 512235.67125000001, 9054039.3125, 304.00375000000929
+INFO(indexer.cpp:1699): finished indexing chunk r022
+INFO(indexer.cpp:1656): start indexing chunk r246
+filesize: 62'360'127
+min: 512235.67125000001, 9053966.4587500002, 231.15000000000001
+max: 512308.52500000002, 9054039.3125, 304.00375000000929
+INFO(indexer.cpp:1699): finished indexing chunk r020
+INFO(indexer.cpp:1656): start indexing chunk r26
+filesize: 68'235'309
+min: 512162.8175, 9054039.3125, 231.15000000000001
+max: 512308.52500000002, 9054185.0199999996, 376.8575000000186
+INFO(indexer.cpp:1699): finished indexing chunk r00
+INFO(indexer.cpp:1656): start indexing chunk r40
+filesize: 68'533'839
+min: 512308.52500000002, 9053602.1899999995, 231.15000000000001
+max: 512454.23250000004, 9053747.8975000009, 376.8575000000186
+INFO(indexer.cpp:1699): finished indexing chunk r2402
+INFO(indexer.cpp:1656): start indexing chunk r4200
+filesize: 27'510'392
+min: 512308.52500000002, 9053747.8975000009, 231.15000000000001
+max: 512344.95187500003, 9053784.3243749999, 267.57687500000463
+INFO(indexer.cpp:1699): finished indexing chunk r2406
+INFO(indexer.cpp:1656): start indexing chunk r4202
+filesize: 42'918'663
+min: 512308.52500000002, 9053784.3243749999, 231.15000000000001
+max: 512344.95187500003, 9053820.7512500007, 267.57687500000463
+INFO(indexer.cpp:1699): finished indexing chunk r2400
+INFO(indexer.cpp:1656): start indexing chunk r4204
+filesize: 25'881'900
+min: 512344.95187500003, 9053747.8975000009, 231.15000000000001
+max: 512381.37875000003, 9053784.3243749999, 267.57687500000463
+INFO(indexer.cpp:1699): finished indexing chunk r0626
+INFO(indexer.cpp:1656): start indexing chunk r4206
+filesize: 36'520'790
+min: 512344.95187500003, 9053784.3243749999, 231.15000000000001
+max: 512381.37875000003, 9053820.7512500007, 267.57687500000463
+INFO(indexer.cpp:1699): finished indexing chunk r0624
+INFO(indexer.cpp:1656): start indexing chunk r4220
+filesize: 61'145'671
+min: 512308.52500000002, 9053820.7512500007, 231.15000000000001
+max: 512344.95187500003, 9053857.1781250015, 267.57687500000463
+INFO(indexer.cpp:1699): finished indexing chunk r2404
+INFO(indexer.cpp:1699): finished indexing chunk r0660
+INFO(indexer.cpp:1656): start indexing chunk r4221
+filesize: 54'002
+min: 512308.52500000002, 9053820.7512500007, 267.57687500000463
+max: 512344.95187500003, 9053857.1781250015, 304.00375000000929
+INFO(indexer.cpp:1699): finished indexing chunk r4221
+INFO(indexer.cpp:1656): start indexing chunk r4222
+filesize: 41'713'259
+min: 512308.52500000002, 9053857.1781250015, 231.15000000000001
+max: 512344.95187500003, 9053893.6050000004, 267.57687500000463
+INFO(indexer.cpp:1656): start indexing chunk r4223
+filesize: 117'769
+min: 512308.52500000002, 9053857.1781250015, 267.57687500000463
+max: 512344.95187500003, 9053893.6050000004, 304.00375000000929
+INFO(indexer.cpp:1699): finished indexing chunk r4223
+INFO(indexer.cpp:1699): finished indexing chunk r0620
+INFO(indexer.cpp:1656): start indexing chunk r4224
+filesize: 49'376'335
+min: 512344.95187500003, 9053820.7512500007, 231.15000000000001
+max: 512381.37875000003, 9053857.1781250015, 267.57687500000463
+INFO(indexer.cpp:1656): start indexing chunk r4226
+filesize: 31'066'619
+min: 512344.95187500003, 9053857.1781250015, 231.15000000000001
+max: 512381.37875000003, 9053893.6050000004, 267.57687500000463
+INFO(indexer.cpp:1699): finished indexing chunk r246
+INFO(indexer.cpp:1656): start indexing chunk r424
+filesize: 51'743'154
+min: 512381.37875000003, 9053747.8975000009, 231.15000000000001
+max: 512454.23250000004, 9053820.7512500007, 304.00375000000929
+INFO(indexer.cpp:1699): finished indexing chunk r242
+INFO(indexer.cpp:1656): start indexing chunk r426
+filesize: 88'669'610
+min: 512381.37875000003, 9053820.7512500007, 231.15000000000001
+max: 512454.23250000004, 9053893.6050000004, 304.00375000000929
+INFO(indexer.cpp:1699): finished indexing chunk r4200
+INFO(indexer.cpp:1656): start indexing chunk r46
+filesize: 21'274'277
+min: 512454.23250000004, 9053747.8975000009, 231.15000000000001
+max: 512599.94000000006, 9053893.6050000004, 376.8575000000186
+INFO(indexer.cpp:1699): finished indexing chunk r4204
+INFO(indexer.cpp:1656): start indexing chunk r600
+filesize: 92'198'495
+min: 512308.52500000002, 9053893.6050000004, 231.15000000000001
+max: 512381.37875000003, 9053966.4587500002, 304.00375000000929
+INFO(indexer.cpp:1699): finished indexing chunk r26
+INFO(indexer.cpp:1699): finished indexing chunk r042
+INFO(indexer.cpp:1656): start indexing chunk r602
+filesize: 35'635'337
+min: 512308.52500000002, 9053966.4587500002, 231.15000000000001
+max: 512381.37875000003, 9054039.3125, 304.00375000000929
+INFO(indexer.cpp:1699): finished indexing chunk r0666
+INFO(indexer.cpp:1656): start indexing chunk r604
+filesize: 40'699'621
+min: 512381.37875000003, 9053893.6050000004, 231.15000000000001
+max: 512454.23250000004, 9053966.4587500002, 304.00375000000929
+INFO(indexer.cpp:1656): start indexing chunk r606
+filesize: 21'902'492
+min: 512381.37875000003, 9053966.4587500002, 231.15000000000001
+max: 512454.23250000004, 9054039.3125, 304.00375000000929
+INFO(indexer.cpp:1699): finished indexing chunk r0664
+INFO(indexer.cpp:1656): start indexing chunk r62
+filesize: 50'016'299
+min: 512308.52500000002, 9054039.3125, 231.15000000000001
+max: 512454.23250000004, 9054185.0199999996, 376.8575000000186
+INFO(indexer.cpp:1699): finished indexing chunk r046
+INFO(indexer.cpp:1656): start indexing chunk r64
+filesize: 37'901'871
+min: 512454.23250000004, 9053893.6050000004, 231.15000000000001
+max: 512599.94000000006, 9054039.3125, 376.8575000000186
+INFO(indexer.cpp:1699): finished indexing chunk r46
+INFO(indexer.cpp:1656): start indexing chunk r66
+filesize: 1'844'531
+min: 512454.23250000004, 9054039.3125, 231.15000000000001
+max: 512599.94000000006, 9054185.0199999996, 376.8575000000186
+INFO(indexer.cpp:1699): finished indexing chunk r66
+INFO(indexer.cpp:1699): finished indexing chunk r40
+INFO(indexer.cpp:1699): finished indexing chunk r0622
+INFO(indexer.cpp:1699): finished indexing chunk r024
+INFO(indexer.cpp:1699): finished indexing chunk r606
+INFO(indexer.cpp:1699): finished indexing chunk r4206
+INFO(indexer.cpp:1699): finished indexing chunk r602
+INFO(indexer.cpp:1699): finished indexing chunk r4226
+INFO(indexer.cpp:1699): finished indexing chunk r64
+INFO(indexer.cpp:1699): finished indexing chunk r4202
+INFO(indexer.cpp:1699): finished indexing chunk r424
+INFO(indexer.cpp:1699): finished indexing chunk r604
+INFO(indexer.cpp:1699): finished indexing chunk r62
+INFO(indexer.cpp:1699): finished indexing chunk r4222
+INFO(indexer.cpp:1699): finished indexing chunk r4224
+INFO(indexer.cpp:1699): finished indexing chunk r0662
+INFO(indexer.cpp:1699): finished indexing chunk r4220
+INFO(indexer.cpp:1699): finished indexing chunk r20
+INFO(indexer.cpp:1699): finished indexing chunk r026
+INFO(indexer.cpp:1699): finished indexing chunk r060
+INFO(indexer.cpp:1699): finished indexing chunk r426
+INFO(indexer.cpp:1699): finished indexing chunk r600
+INFO(indexer.cpp:1699): finished indexing chunk r064
+INFO(indexer.cpp:1699): finished indexing chunk r244

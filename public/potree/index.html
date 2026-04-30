@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Nube de Puntos 3D — AIDRONE</title>
+    <link rel="stylesheet" type="text/css" href="./build/potree/potree.css" />
+    <link rel="stylesheet" type="text/css" href="./libs/jquery-ui/jquery-ui.min.css" />
+  </head>
+  <body style="margin:0; background:#080c10;">
+    <div id="potree_render_area" style="width:100%;height:100vh;"></div>
+    <div id="potree_sidebar_container"></div>
+
+    <script src="./libs/jquery/jquery-3.1.1.min.js"></script>
+    <script src="./libs/jquery-ui/jquery-ui.min.js"></script>
+    <script src="./libs/other/BinaryHeap.js"></script>
+    <script src="./libs/tween/tween.min.js"></script>
+    <script src="./libs/d3/d3.js"></script>
+    <script src="./libs/proj4/proj4.js"></script>
+    <script src="./libs/three.js/build/three.min.js"></script>
+    <script src="./libs/three.js/extra/lines.js"></script>
+    <script src="./build/potree/potree.js"></script>
+
+    <script>
+      window.onload = function () {
+        var viewer = new Potree.Viewer(
+          document.getElementById("potree_render_area")
+        );
+        viewer.setEDLEnabled(true);
+        viewer.setFOV(75);
+        viewer.setPointBudget(1000000);
+
+        Potree.loadPointCloud("../nube3d/metadata.json", "nube", function (e) {
+          viewer.scene.addPointCloud(e.pointcloud);
+          viewer.fitToScreen();
+          viewer.setClipTask(Potree.ClipTask.NONE);
+        });
+      };
+    </script>
+  </body>
+</html>
