@@ -298,19 +298,21 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Form */}
-            <form className="flex flex-col gap-4" onSubmit={(e) => e.preventDefault()}>
-              {["Nombre completo", "Correo electrónico", "Empresa (opcional)"].map((placeholder) => (
-                <input key={placeholder} type="text" placeholder={placeholder}
-                  className="bg-transparent border border-cyan-900/40 px-4 py-3 text-sm text-gray-300 placeholder-gray-700 focus:outline-none focus:border-cyan-500/60 transition-colors font-sans" />
-              ))}
-              <textarea placeholder="Describe tu proyecto..." rows={4}
-                className="bg-transparent border border-cyan-900/40 px-4 py-3 text-sm text-gray-300 placeholder-gray-700 focus:outline-none focus:border-cyan-500/60 transition-colors resize-none font-sans" />
-              <button type="submit"
-                className="px-8 py-3 bg-cyan-500 text-black text-xs font-bold tracking-widest hover:bg-cyan-400 transition-all">
-                ENVIAR CONSULTA →
-              </button>
-            </form>
+{/* Form */}
+<form className="flex flex-col gap-4" action="https://formspree.io/f/xdabobvr" method="POST">
+  <input name="nombre" type="text" placeholder="Nombre completo"
+    className="bg-transparent border border-cyan-900/40 px-4 py-3 text-sm text-gray-300 placeholder-gray-700 focus:outline-none focus:border-cyan-500/60 transition-colors font-sans" />
+  <input name="email" type="email" placeholder="Correo electrónico"
+    className="bg-transparent border border-cyan-900/40 px-4 py-3 text-sm text-gray-300 placeholder-gray-700 focus:outline-none focus:border-cyan-500/60 transition-colors font-sans" />
+  <input name="empresa" type="text" placeholder="Empresa (opcional)"
+    className="bg-transparent border border-cyan-900/40 px-4 py-3 text-sm text-gray-300 placeholder-gray-700 focus:outline-none focus:border-cyan-500/60 transition-colors font-sans" />
+  <textarea name="mensaje" placeholder="Describe tu proyecto..." rows={4}
+    className="bg-transparent border border-cyan-900/40 px-4 py-3 text-sm text-gray-300 placeholder-gray-700 focus:outline-none focus:border-cyan-500/60 transition-colors resize-none font-sans" />
+  <button type="submit"
+    className="px-8 py-3 bg-cyan-500 text-black text-xs font-bold tracking-widest hover:bg-cyan-400 transition-all">
+    ENVIAR CONSULTA →
+  </button>
+</form>
           </div>
         </div>
       </section>
