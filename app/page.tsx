@@ -111,10 +111,11 @@ export default function Home() {
                 {n}
               </button>
             ))}
-            <button onClick={() => scrollTo("Contacto")}
-              className="px-4 py-2 border border-cyan-500/50 text-cyan-400 text-xs tracking-widest hover:bg-cyan-500/10 transition-all">
-              COTIZAR
-            </button>
+            <a href="https://wa.me/51930284388?text=Hola%2C%20me%20interesa%20cotizar%20un%20levantamiento%20fotogram%C3%A9trico%20con%20drone"
+            target="_blank"
+            className="px-4 py-2 border border-cyan-500/50 text-cyan-400 text-xs tracking-widest hover:bg-cyan-500/10 transition-all">
+            COTIZAR
+            </a>
           </div>
 
           {/* Mobile menu button */}
@@ -164,10 +165,11 @@ export default function Home() {
               className="px-8 py-3 bg-cyan-500 text-black text-xs font-bold tracking-widest hover:bg-cyan-400 transition-all w-full sm:w-auto">
               VER PROYECTOS
             </button>
-            <button onClick={() => scrollTo("Contacto")}
-              className="px-8 py-3 border border-gray-600 text-gray-300 text-xs tracking-widest hover:border-cyan-500/50 hover:text-cyan-400 transition-all w-full sm:w-auto">
-              SOLICITAR COTIZACIÓN
-            </button>
+<a href="https://wa.me/51930284388?text=Hola%2C%20me%20interesa%20cotizar%20un%20levantamiento%20fotogram%C3%A9trico%20con%20drone"
+  target="_blank"
+  className="px-8 py-3 border border-gray-600 text-gray-300 text-xs tracking-widest hover:border-cyan-500/50 hover:text-cyan-400 transition-all w-full sm:w-auto">
+  SOLICITAR COTIZACIÓN
+</a>
           </div>
         </div>
 
