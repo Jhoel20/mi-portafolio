@@ -36,7 +36,7 @@ const PROJECTS = [
     title: "Levantamiento Industrual Tulumayo — Ucayali",
     tags: ["Ortofoto", "Curvas de Nivel", "Nube de Puntos", "BIM", "5 ha"],
     desc: "Vuelo fotogramétrico sobre área industria de aceites. Precisión ±2 cm. Entrega en 48h.",
-    img: "/P_UCAYALI.jpg",
+    img: "/P_UCAYALI.JPG",
   },
   {
     title: "Edificio Comercial — Lima",
