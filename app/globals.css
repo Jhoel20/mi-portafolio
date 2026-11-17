@@ -15,6 +15,22 @@
   --color-brand-900: #404040;
 }
 
+/* Animaciones de "Cómo trabajamos" (se desactivan si el sistema pide menos movimiento) */
+@theme {
+  --animate-step-pulse: step-pulse 3s ease-out infinite;
+  --animate-hover-float: hover-float 3s ease-in-out infinite;
+
+  @keyframes step-pulse {
+    0% { opacity: 0.9; transform: scale(1); }
+    40% { opacity: 0; transform: scale(1.45); }
+    100% { opacity: 0; transform: scale(1.45); }
+  }
+  @keyframes hover-float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-4px); }
+  }
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);

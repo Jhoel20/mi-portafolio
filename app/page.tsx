@@ -1,7 +1,7 @@
 "use client";
 import dynamic from "next/dynamic";
-import { useEffect, useState } from "react";
-import { MapPin, Mail, Phone, Menu, X, ArrowRight, Check, MessageCircle } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
+import { MapPin, Mail, Phone, Menu, X, ArrowRight, Check, MessageCircle, Factory, HardHat, Mountain, Ruler, Drone, Layers, PackageCheck } from "lucide-react";
 
 const Viewer360 = dynamic(() => import("./Viewer360").then((m) => m.default), { ssr: false });
 const Visor3D = dynamic(() => import("./Visor3D").then((m) => m.default), { ssr: false });
@@ -14,27 +14,36 @@ const WHATSAPP =
 
 const SECTORS = ["Minería", "Agroindustria", "Edificación", "Inmobiliario"];
 
-// Cada servicio se presenta por el problema que resuelve; los entregables van debajo.
+// Cada servicio se presenta por el problema que resuelve, con una foto real de fondo.
+// El texto aparece al pasar el mouse (computadora) o al tocar la tarjeta (celular).
 const SERVICES = [
   {
+    icon: Factory,
     title: "Ampliaciones sin sorpresas",
-    desc: "Levantamos tu planta tal como está hoy y modelamos sobre ella. El proyectista diseña con las medidas reales de lo existente, no con planos antiguos.",
+    desc: "Diseña sobre las medidas reales de tu planta, no sobre planos antiguos.",
     items: ["Nube de puntos 3D", "Modelo BIM en Revit"],
+    img: "/img/nube-bim-ampliacion.jpg",
   },
   {
-    title: "Avance de obra a la vista",
-    desc: "Vuelos periódicos sobre la obra para ver y comparar el avance sin ir al sitio. Útil para gerencia, supervisión e inversionistas.",
-    items: ["Ortofotos por fecha", "Registro aéreo de la obra"],
+    icon: HardHat,
+    title: "Avance de obra",
+    desc: "Compara el avance de tu obra sin ir al sitio.",
+    items: ["Ortofotos por fecha", "Registro aéreo"],
+    img: "/img/monitoreo-barranco.jpg",
   },
   {
-    title: "Topografía de áreas extensas",
-    desc: "Cubrimos con drone terrenos y líneas largas donde la topografía tradicional toma mucho más tiempo en campo.",
-    items: ["Curvas de nivel", "Modelo digital de elevación"],
+    icon: Mountain,
+    title: "Topografía",
+    desc: "Áreas extensas y líneas largas en menos tiempo de campo.",
+    items: ["Curvas de nivel", "Modelo de elevación"],
+    img: "/img/mineria-huarochiri.jpg",
   },
   {
-    title: "Planos de lo realmente construido",
-    desc: "Documentamos cómo quedó la obra, no cómo se diseñó. Planos as-built listos para el expediente técnico.",
-    items: ["Planos as-built", "Entrega en Revit y AutoCAD"],
+    icon: Ruler,
+    title: "Planos as-built",
+    desc: "Cómo quedó la obra, no cómo se diseñó.",
+    items: ["Planos as-built", "Revit y AutoCAD"],
+    img: "/img/cimentacion-lima-sur.jpg",
   },
 ];
 
@@ -77,20 +86,92 @@ const PROJECTS: Project[] = [
 const STEPS = [
   {
     n: "1",
+    icon: Drone,
     title: "Volamos el sitio",
     desc: "Coordinamos el acceso contigo y capturamos el área con drone, sin detener tu operación.",
   },
   {
     n: "2",
+    icon: Layers,
     title: "Procesamos los datos",
     desc: "Convertimos las fotos en ortofoto, nube de puntos y modelo de elevación, georreferenciados.",
   },
   {
     n: "3",
+    icon: PackageCheck,
     title: "Entregamos listo para usar",
     desc: "Recibes los archivos en Revit y AutoCAD, y un visor web para revisar el modelo 3D desde cualquier equipo.",
   },
 ];
+
+// "Cómo trabajamos": al entrar en pantalla se dibuja la línea entre pasos, uno tras otro,
+// y luego cada ícono se ilumina en secuencia, en bucle, como un proceso en marcha.
+function Steps() {
+  const ref = useRef<HTMLDivElement>(null);
+  const [seen, setSeen] = useState(false);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const io = new IntersectionObserver(
+      ([e]) => {
+        if (e.isIntersecting) {
+          setSeen(true);
+          io.disconnect();
+        }
+      },
+      { threshold: 0.35 }
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
+
+  return (
+    <div ref={ref} className="mt-16 grid grid-cols-1 md:grid-cols-3">
+      {STEPS.map((s, i) => {
+        const Icon = s.icon;
+        const last = i === STEPS.length - 1;
+        const delay = `${i * 600}ms`;
+        return (
+          <div key={s.n} className="relative flex md:flex-col md:items-center gap-6 md:gap-0 pb-12 md:pb-0 md:px-6 md:text-center">
+            {/* Conector hacia el siguiente paso: vertical en celular, horizontal en computadora */}
+            {!last && (
+              <>
+                <span className="md:hidden absolute left-7 top-16 bottom-2 w-px bg-white/10 overflow-hidden">
+                  <span className={`block w-full h-full bg-white origin-top transition-transform duration-700 ease-out ${seen ? "scale-y-100" : "scale-y-0"}`}
+                    style={{ transitionDelay: `${i * 600 + 400}ms` }} />
+                </span>
+                <span className="hidden md:block absolute top-7 left-[calc(50%+2.5rem)] w-[calc(100%-5rem)] h-px bg-white/10 overflow-hidden">
+                  <span className={`block w-full h-full bg-white origin-left transition-transform duration-700 ease-out ${seen ? "scale-x-100" : "scale-x-0"}`}
+                    style={{ transitionDelay: `${i * 600 + 400}ms` }} />
+                </span>
+              </>
+            )}
+
+            {/* Ícono */}
+            <div className={`relative shrink-0 w-14 h-14 flex items-center justify-center border transition-all duration-500
+              ${seen ? "border-white text-white bg-white/5" : "border-white/15 text-neutral-600"}`}
+              style={{ transitionDelay: delay }}>
+              {seen && (
+                <span className="absolute inset-0 border border-white motion-safe:animate-step-pulse opacity-0"
+                  style={{ animationDelay: `${1800 + i * 1000}ms` }} />
+              )}
+              <Icon size={26} strokeWidth={1.5} className={i === 0 && seen ? "motion-safe:animate-hover-float" : ""} />
+            </div>
+
+            {/* Texto */}
+            <div className={`md:mt-8 transition-all duration-700 ease-out ${seen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
+              style={{ transitionDelay: `${i * 600 + 200}ms` }}>
+              <span className="text-xs tracking-[0.2em] uppercase text-neutral-500">Paso {s.n}</span>
+              <h3 className="mt-2 text-xl font-semibold tracking-tight">{s.title}</h3>
+              <p className="mt-3 text-neutral-400 leading-relaxed md:max-w-xs md:mx-auto">{s.desc}</p>
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  );
+}
 
 function Label({ children }: { children: React.ReactNode }) {
   return <p className="text-xs font-medium tracking-[0.2em] uppercase text-neutral-500 mb-4">{children}</p>;
@@ -99,6 +180,7 @@ function Label({ children }: { children: React.ReactNode }) {
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [activeService, setActiveService] = useState(0);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -232,20 +314,46 @@ export default function Home() {
             Lo que resolvemos en tu proyecto
           </h2>
 
-          <div className="mt-14 grid grid-cols-1 md:grid-cols-2 gap-px bg-white/10 border border-white/10">
-            {SERVICES.map((s) => (
-              <div key={s.title} className="bg-[#050505] p-8 sm:p-10">
-                <h3 className="text-xl sm:text-2xl font-semibold tracking-tight">{s.title}</h3>
-                <p className="mt-3 text-neutral-400 leading-relaxed">{s.desc}</p>
-                <ul className="mt-6 space-y-2">
-                  {s.items.map((it) => (
-                    <li key={it} className="flex items-center gap-2 text-sm text-neutral-200">
-                      <Check size={16} className="text-neutral-500 shrink-0" /> {it}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
+          <div className="mt-14 flex flex-col md:flex-row gap-2 md:h-[30rem]">
+            {SERVICES.map((s, i) => {
+              const open = activeService === i;
+              const Icon = s.icon;
+              return (
+                <button
+                  key={s.title}
+                  type="button"
+                  aria-expanded={open}
+                  onClick={() => setActiveService(i)}
+                  onMouseEnter={() => setActiveService(i)}
+                  onFocus={() => setActiveService(i)}
+                  className={`group relative overflow-hidden text-left border border-white/10 transition-all duration-500 ease-out
+                    ${open ? "h-80 md:h-auto md:flex-[3]" : "h-28 md:h-auto md:flex-1"}`}
+                >
+                  <img src={s.img} alt="" loading="lazy"
+                    className={`absolute inset-0 w-full h-full object-cover transition-all duration-700
+                      ${open ? "scale-100 grayscale-0" : "scale-110 grayscale"}`} />
+                  <div className={`absolute inset-0 transition-colors duration-500
+                    ${open ? "bg-gradient-to-t from-black via-black/60 to-black/10" : "bg-black/65"}`} />
+
+                  <div className="relative h-full flex flex-col justify-end p-5 sm:p-7">
+                    <Icon size={26} strokeWidth={1.5} className="text-white mb-3" />
+                    <h3 className={`font-semibold tracking-tight leading-tight ${open ? "text-xl sm:text-2xl" : "text-lg md:text-xl"}`}>{s.title}</h3>
+                    <div className={`grid transition-all duration-500 ${open ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}`}>
+                      <div className="overflow-hidden">
+                        <p className="mt-3 text-neutral-200 leading-relaxed max-w-md">{s.desc}</p>
+                        <ul className="mt-4 flex flex-wrap gap-x-5 gap-y-2">
+                          {s.items.map((it) => (
+                            <li key={it} className="flex items-center gap-2 text-sm text-white">
+                              <Check size={15} className="shrink-0" /> {it}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </button>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -334,15 +442,7 @@ export default function Home() {
           <Label>Cómo trabajamos</Label>
           <h2 className="text-3xl sm:text-5xl font-semibold tracking-tight">Del vuelo al modelo, en tres pasos</h2>
 
-          <div className="mt-14 grid grid-cols-1 md:grid-cols-3 gap-10">
-            {STEPS.map((s) => (
-              <div key={s.n} className="border-t border-white/25 pt-6">
-                <span className="text-5xl font-semibold text-neutral-600">{s.n}</span>
-                <h3 className="mt-4 text-xl font-semibold tracking-tight">{s.title}</h3>
-                <p className="mt-3 text-neutral-400 leading-relaxed">{s.desc}</p>
-              </div>
-            ))}
-          </div>
+          <Steps />
         </div>
       </section>
 
