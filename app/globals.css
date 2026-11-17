@@ -5,6 +5,16 @@
   --foreground: #171717;
 }
 
+/* Paleta AIDRONE: solo blanco y negro, como el logo (sin color de acento).
+   Para volver a usar un color, cambia brand-400 y brand-500 por ese color. */
+@theme {
+  --color-brand-300: #ffffff;
+  --color-brand-400: #d4d4d4;
+  --color-brand-500: #ffffff;
+  --color-brand-800: #525252;
+  --color-brand-900: #404040;
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);

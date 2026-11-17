@@ -1,40 +1,246 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <title>Nube de Puntos 3D — AIDRONE</title>
-    <link rel="stylesheet" type="text/css" href="./build/potree/potree.css" />
-    <link rel="stylesheet" type="text/css" href="./libs/jquery-ui/jquery-ui.min.css" />
-  </head>
-  <body style="margin:0; background:#080c10;">
-    <div id="potree_render_area" style="width:100%;height:100vh;"></div>
-    <div id="potree_sidebar_container"></div>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <title>Nube de Puntos 3D — AIDRONE</title>
+  <link rel="stylesheet" href="./build/potree/potree.css" />
+  <link rel="stylesheet" href="./libs/jquery-ui/jquery-ui.min.css" />
+  <style>
+    :root { --c: #ffffff; --bg: #050505; --line: rgba(255, 255, 255, .22); }
+    html, body { margin: 0; height: 100%; background: var(--bg); overflow: hidden;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; color: #e5e7eb; }
+    #potree_render_area { position: absolute; inset: 0; }
+    #potree_sidebar_container { display: none; }
 
-    <script src="./libs/jquery/jquery-3.1.1.min.js"></script>
-    <script src="./libs/jquery-ui/jquery-ui.min.js"></script>
-    <script src="./libs/other/BinaryHeap.js"></script>
-    <script src="./libs/tween/tween.min.js"></script>
-    <script src="./libs/d3/d3.js"></script>
-    <script src="./libs/proj4/proj4.js"></script>
-    <script src="./libs/three.js/build/three.min.js"></script>
-    <script src="./libs/three.js/extra/lines.js"></script>
-    <script src="./build/potree/potree.js"></script>
+    /* Loader */
+    #loader { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center;
+      justify-content: center; gap: 14px; background: var(--bg); z-index: 20; transition: opacity .6s; }
+    #loader.hide { opacity: 0; pointer-events: none; }
+    .ring { width: 46px; height: 46px; border: 2px solid var(--line); border-top-color: var(--c);
+      border-radius: 50%; animation: spin 1s linear infinite; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    #loader small { font-size: 11px; letter-spacing: .25em; color: #9ca3af; }
 
-    <script>
-      window.onload = function () {
-        var viewer = new Potree.Viewer(
-          document.getElementById("potree_render_area")
-        );
-        viewer.setEDLEnabled(true);
-        viewer.setFOV(75);
-        viewer.setPointBudget(1000000);
+    /* Barra de herramientas */
+    .bar { position: absolute; z-index: 10; display: flex; gap: 6px; flex-wrap: wrap;
+      background: rgba(5, 5, 5, .78); backdrop-filter: blur(6px); border: 1px solid var(--line); padding: 6px; }
+    #top { top: 12px; left: 12px; right: 12px; justify-content: space-between; align-items: center; }
+    .grp { display: flex; gap: 4px; flex-wrap: wrap; align-items: center; }
+    .lbl { font-size: 10px; letter-spacing: .2em; color: #6b7280; margin: 0 4px 0 6px; }
+    button { background: transparent; color: #cbd5e1; border: 1px solid rgba(148, 163, 184, .25);
+      font: inherit; font-size: 11px; letter-spacing: .08em; padding: 6px 9px; cursor: pointer; transition: .2s; }
+    button:hover { border-color: var(--c); color: var(--c); }
+    button.on { background: var(--c); color: #000; border-color: var(--c); font-weight: 700; }
 
-        Potree.loadPointCloud("https://pub-684775b68cbc4b3a87ad8d08527ab5f1.r2.dev/metadata.json", "nube", function (e) {
-          viewer.scene.addPointCloud(e.pointcloud);
-          viewer.fitToScreen();
-          viewer.setClipTask(Potree.ClipTask.NONE);
-        });
+    #info { left: 12px; bottom: 12px; font-size: 11px; color: #9ca3af; flex-direction: column; gap: 2px; padding: 8px 10px; }
+    #info b { color: var(--c); font-weight: 600; }
+    #legend { right: 12px; bottom: 12px; display: none; align-items: center; gap: 8px; font-size: 11px; padding: 8px 10px; }
+    #legend .grad { width: 140px; height: 8px;
+      background: linear-gradient(90deg, #5e4fa2, #3288bd, #66c2a5, #abdda4, #e6f598, #fee08b, #fdae61, #f46d43, #d53e4f, #9e0142); }
+    #hint { position: absolute; z-index: 10; left: 50%; bottom: 16px; transform: translateX(-50%);
+      font-size: 11px; letter-spacing: .12em; color: #9ca3af; background: rgba(5,5,5,.7); padding: 6px 12px;
+      border: 1px solid var(--line); transition: opacity .8s; white-space: nowrap; }
+    #hint.hide { opacity: 0; }
+    @media (max-width: 720px) {
+      .lbl, .desk { display: none; }
+      #top { top: 8px; left: 8px; right: 8px; }
+      #info { display: none; }
+      #legend { left: 8px; right: auto; bottom: 8px; }
+      #hint { bottom: 52px; font-size: 10px; }
+    }
+  </style>
+</head>
+<body>
+  <div id="potree_render_area"></div>
+  <div id="potree_sidebar_container"></div>
+
+  <div id="loader"><div class="ring"></div><small id="loadtxt">CARGANDO NUBE DE PUNTOS…</small></div>
+
+  <div id="top" class="bar">
+    <div class="grp">
+      <span class="lbl">COLOR</span>
+      <button data-color="rgba" class="on">REAL</button>
+      <button data-color="elevation">ELEVACIÓN</button>
+      <span class="lbl">VISTA</span>
+      <button data-view="3d">3D</button>
+      <button data-view="top">PLANTA</button>
+      <button data-view="front" class="desk">FRONTAL</button>
+      <button data-view="left" class="desk">LATERAL</button>
+    </div>
+    <div class="grp">
+      <span class="lbl">MEDIR</span>
+      <button data-measure="distance">DISTANCIA</button>
+      <button data-measure="area">ÁREA</button>
+      <button data-measure="height" class="desk">ALTURA</button>
+      <button data-measure="point" class="desk">COORD.</button>
+      <button id="clear" title="Borrar mediciones">✕</button>
+      <button id="orbit" class="on" title="Rotación automática">⟳ AUTO</button>
+      <button id="fs" title="Pantalla completa">⛶</button>
+    </div>
+  </div>
+
+  <div id="info" class="bar">
+    <span id="name">—</span>
+    <span><b id="pts">0</b> puntos visibles de <b id="total">—</b></span>
+  </div>
+  <div id="legend" class="bar"><span id="zmin">—</span><div class="grad"></div><span id="zmax">—</span></div>
+  <div id="hint">ARRASTRA PARA ROTAR · RUEDA / PELLIZCO PARA ZOOM · CLIC DERECHO PARA DESPLAZAR</div>
+
+  <script src="./libs/jquery/jquery-3.1.1.min.js"></script>
+  <script src="./libs/jquery-ui/jquery-ui.min.js"></script>
+  <script src="./libs/other/BinaryHeap.js"></script>
+  <script src="./libs/tween/tween.min.js"></script>
+  <script src="./libs/d3/d3.js"></script>
+  <script src="./libs/proj4/proj4.js"></script>
+  <script src="./libs/three.js/build/three.min.js"></script>
+  <script src="./libs/three.js/extra/lines.js"></script>
+  <script src="./build/potree/potree.js"></script>
+
+  <script>
+    // Nube por defecto (Cloudflare R2). Se puede cambiar con ?nube=URL_de_metadata.json
+    var DEFAULT_URL = "https://pub-684775b68cbc4b3a87ad8d08527ab5f1.r2.dev/metadata.json";
+    var params = new URLSearchParams(location.search);
+    var CLOUD_URL = params.get("nube") || DEFAULT_URL;
+    var isMobile = matchMedia("(pointer: coarse)").matches || innerWidth < 720;
+
+    // OJO: no usar "$" aquí: Potree necesita el $ de jQuery
+    var q = function (s) { return document.querySelector(s); };
+    var qa = function (s) { return Array.prototype.slice.call(document.querySelectorAll(s)); };
+
+    var viewer = new Potree.Viewer(q("#potree_render_area"));
+    viewer.setEDLEnabled(!isMobile);
+    viewer.setFOV(60);
+    viewer.setPointBudget(isMobile ? 350000 : 1500000);
+    viewer.setBackground("gradient");
+    viewer.setMinNodeSize(isMobile ? 60 : 30);
+
+    var cloud = null;
+    var zRange = null;
+
+    // ---------- Carga ----------
+    var dots = 0;
+    var loadTimer = setInterval(function () {
+      dots = (dots + 1) % 4;
+      q("#loadtxt").textContent = "CARGANDO NUBE DE PUNTOS" + ".".repeat(dots);
+    }, 400);
+
+    // Lee el rango real de elevaciones desde metadata.json (Potree 2.0)
+    fetch(CLOUD_URL).then(function (r) { return r.json(); }).then(function (m) {
+      var pos = (m.attributes || []).find(function (a) { return a.name === "position"; });
+      if (pos) zRange = [pos.min[2], pos.max[2]];
+      if (m.name) q("#name").textContent = m.name;
+      if (m.points) q("#total").textContent = Number(m.points).toLocaleString("es-PE");
+      applyElevationRange();
+    }).catch(function () {});
+
+    Potree.loadPointCloud(CLOUD_URL, "nube", function (e) {
+      cloud = e.pointcloud;
+      var mat = cloud.material;
+      mat.activeAttributeName = "rgba";
+      mat.pointSizeType = Potree.PointSizeType.ADAPTIVE;
+      mat.shape = Potree.PointShape.CIRCLE;
+      mat.size = isMobile ? 1.1 : 0.9;
+      mat.gradient = Potree.Gradients.SPECTRAL;
+      viewer.scene.addPointCloud(cloud);
+      applyElevationRange();
+
+      setView("3d", false);
+      clearInterval(loadTimer);
+      setTimeout(function () { q("#loader").classList.add("hide"); }, 400);
+      setTimeout(function () { q("#hint").classList.add("hide"); }, 7000);
+    });
+
+    function applyElevationRange() {
+      if (!cloud || !zRange) return;
+      cloud.material.elevationRange = zRange;
+      q("#zmin").textContent = zRange[0].toFixed(1) + " m";
+      q("#zmax").textContent = zRange[1].toFixed(1) + " m";
+    }
+
+    // ---------- Color ----------
+    qa("[data-color]").forEach(function (b) {
+      b.onclick = function () {
+        if (!cloud) return;
+        var mode = b.dataset.color;
+        cloud.material.activeAttributeName = mode;
+        qa("[data-color]").forEach(function (x) { x.classList.toggle("on", x === b); });
+        q("#legend").style.display = mode === "elevation" ? "flex" : "none";
       };
-    </script>
-  </body>
+    });
+
+    // ---------- Vistas ----------
+    function setView(v, animate) {
+      if (v === "top") viewer.setTopView();
+      else if (v === "front") viewer.setFrontView();
+      else if (v === "left") viewer.setLeftView();
+      else {
+        // Vista 3D en perspectiva oblicua, como un vuelo de drone
+        viewer.scene.view.yaw = -Math.PI / 6;
+        viewer.scene.view.pitch = -Math.PI / 5;
+        viewer.fitToScreen(0.5, animate === false ? 0 : 800);
+        return;
+      }
+      viewer.fitToScreen(0.55, animate === false ? 0 : 800);
+    }
+    qa("[data-view]").forEach(function (b) {
+      b.onclick = function () { stopOrbit(); setView(b.dataset.view); };
+    });
+
+    // ---------- Mediciones ----------
+    var MEASURES = {
+      distance: { showDistances: true, showArea: false, closed: false, name: "Distancia" },
+      area:     { showDistances: true, showArea: true, closed: true, name: "Área" },
+      height:   { showDistances: false, showHeight: true, showArea: false, closed: false, maxMarkers: 2, name: "Altura" },
+      point:    { showDistances: false, showAngles: false, showCoordinates: true, showArea: false, closed: true, maxMarkers: 1, name: "Punto" }
+    };
+    qa("[data-measure]").forEach(function (b) {
+      b.onclick = function () {
+        stopOrbit();
+        viewer.measuringTool.startInsertion(MEASURES[b.dataset.measure]);
+      };
+    });
+    q("#clear").onclick = function () { viewer.scene.removeAllMeasurements(); };
+
+    // ---------- Rotación automática ----------
+    var orbiting = true, lastInteraction = performance.now();
+    var RESUME_AFTER_MS = 20000;   // retoma la rotación tras 20 s sin tocar
+    function stopOrbit() { orbiting = false; lastInteraction = performance.now(); syncOrbitBtn(); }
+    function syncOrbitBtn() { q("#orbit").classList.toggle("on", orbiting); }
+    q("#orbit").onclick = function () { orbiting = !orbiting; lastInteraction = performance.now(); syncOrbitBtn(); };
+
+    ["pointerdown", "wheel", "touchstart", "keydown"].forEach(function (ev) {
+      q("#potree_render_area").addEventListener(ev, function () {
+        if (orbiting) { orbiting = false; syncOrbitBtn(); autoPaused = true; }
+        lastInteraction = performance.now();
+      }, { passive: true });
+    });
+    var autoPaused = false;
+
+    viewer.addEventListener("update", function (e) {
+      if (!orbiting && autoPaused && performance.now() - lastInteraction > RESUME_AFTER_MS) {
+        orbiting = true; autoPaused = false; syncOrbitBtn();
+      }
+      if (orbiting && cloud) {
+        var view = viewer.scene.view;
+        var pivot = view.getPivot();
+        view.yaw += (e.delta || 0.016) * 0.12;
+        var dir = view.direction;
+        view.position.copy(pivot).addScaledVector(dir, -view.radius);
+      }
+      if (cloud) q("#pts").textContent = (cloud.numVisiblePoints || 0).toLocaleString("es-PE");
+    });
+
+    // ---------- Pantalla completa ----------
+    q("#fs").onclick = function () {
+      if (document.fullscreenElement) document.exitFullscreen();
+      else document.documentElement.requestFullscreen().catch(function () { window.open(location.href, "_blank"); });
+    };
+
+    // Pausa el render cuando la pestaña no está visible (ahorra batería en móviles)
+    document.addEventListener("visibilitychange", function () {
+      viewer.setPointBudget(document.hidden ? 1 : (isMobile ? 350000 : 1500000));
+    });
+  </script>
+</body>
 </html>
